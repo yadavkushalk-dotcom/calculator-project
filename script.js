@@ -1,41 +1,13 @@
-// Simple Calculator in JavaScript
+let display = document.getElementById("display");
 
-function add(a, b) {
-    return a + b;
+function append(value) {
+  display.value += value;
 }
 
-function subtract(a, b) {
-    return a - b;
+function clearDisplay() {
+  display.value = "";
 }
 
-function multiply(a, b) {
-    return a * b;
+function calculate() {
+  display.value = eval(display.value);
 }
-
-function divide(a, b) {
-    if (b === 0) {
-        return "Error: Division by zero";
-    }
-    return a / b;
-}
-
-function run(operation, a, b) {
-    switch (operation) {
-        case 'add':
-            return add(a, b);
-        case 'subtract':
-            return subtract(a, b);
-        case 'multiply':
-            return multiply(a, b);
-        case 'divide':
-            return divide(a, b);
-        default:
-            return "Invalid operation";
-    }
-}
-
-// Example usage
-console.log(run('add', 5, 3)); // 8
-console.log(run('subtract', 10, 4)); // 6
-console.log(run('multiply', 7, 6)); // 42
-console.log(run('divide', 8, 2)); // 4
